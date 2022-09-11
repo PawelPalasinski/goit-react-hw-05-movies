@@ -6,10 +6,11 @@ https://pawelpalasinski.github.io/goit-react-hw-05-images/
 
 Components: <br/>
 App <br/>
-|-HomePage <br/>
-|--MoviesPage <br/>
-|-MovieDetailsPage <br/>
-|--Cast <br/>
-|--Reviews
+|-Navigation
+|--HomePage <br/>
+|---MoviesPage <br/>
+|--MovieDetailsPage <br/>
+|---Cast <br/>
+|---Reviews
 
 
