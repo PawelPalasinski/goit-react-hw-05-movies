@@ -12,7 +12,7 @@ const { id } = useParams();
   useEffect(() => {
     getCasts(id).then(setCasts);
   }, [id]);
-
+    
     return (
     <>
             <h3>Cast</h3>

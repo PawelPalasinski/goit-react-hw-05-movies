@@ -5,9 +5,11 @@ import { BASE_URL, API_KEY } from './../utils/utils';
 const getMovies = async () => {
   const res = await axios.get(`${BASE_URL}trending/movie/day?${API_KEY}`);
 
-  const trendingMovies = res.data.results.map(({ id, title, poster_path }) => {
-    return { id, title, poster_path };
-  });
+  const trendingMovies = res.data.results.map(
+    ({ id, title, poster_path, vote_average }) => {
+      return { id, title, poster_path, vote_average };
+    }
+  );
   return trendingMovies;
 };
 

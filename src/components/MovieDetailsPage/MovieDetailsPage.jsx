@@ -25,6 +25,10 @@ const MovieDetailsPage = () => {
           <h2>
             {moviesId.title}({moviesId.release_date.slice(0, 4)})
           </h2>
+          <p>
+            User Score:{' '}
+            {Math.round((moviesId.vote_average + Number.EPSILON) * 100) / 100}
+          </p>
           <h3>Overview:</h3>
           <p>{moviesId.overview}</p>
           <h3>Genres</h3>

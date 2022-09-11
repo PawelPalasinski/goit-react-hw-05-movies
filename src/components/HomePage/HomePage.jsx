@@ -10,7 +10,7 @@ const HomePage = () => {
     getMovies().then(setMovies);
   }, []);
 
-  // console.log(movies);
+  console.log(movies);
   // console.log(location);
 
   return (
