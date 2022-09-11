@@ -1,23 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
-import { Routes, Link, Route, Outlet } from 'react-router-dom';
-
-import { getById, getReviews, getCasts } from '../services/api';
-// import Reviews from '../Reviews/Reviews';
-// import Cast from '../Cast/Cast';
+import { Link, Outlet } from 'react-router-dom';
+import { getById } from '../services/api';
 
 const MovieDetailsPage = () => {
   const [moviesId, setIdInfo] = useState(null);
-  const [moviesIdReview, setIdReview] = useState(null);
-  const [moviesIdCast, setIdCast] = useState(null);
-
   const { id } = useParams();
 
   useEffect(() => {
     getById(id).then(setIdInfo);
-    getReviews(id).then(setIdReview);
-    getCasts(id).then(setIdCast);
   }, [id]);
 
   return (
@@ -37,10 +28,12 @@ const MovieDetailsPage = () => {
           <h3>Overview:</h3>
           <p>{moviesId.overview}</p>
           <h3>Genres</h3>
-                  <p>{moviesId.genres.map(genre => genre.name + ' ')}</p>
+          <p>{moviesId.genres.map(genre => genre.name + ' ')}</p>
 
-      <Outlet />      
+          <Link to={`/movies/${id}/reviews`}>Reviews</Link>
+          <Link to={`/movies/${id}/cast`}>Cast</Link>
 
+          <Outlet />
         </>
       )}
     </>

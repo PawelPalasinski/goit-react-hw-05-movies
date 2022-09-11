@@ -2,19 +2,19 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from '../services/api';
 
-
 const Reviews = () => {
-const { id } = useParams();
+  const { id } = useParams();
 
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
     getReviews(id).then(setReviews);
-  }, []);
+  }, [id]);
 
   return (
-      <>
-          <h1>REVIEWS!</h1>
+    <>
+      <h3>REVIEWS!</h3>
+
       {id.length === 0 ? (
         <p>No reviews available</p>
       ) : (
@@ -25,7 +25,7 @@ const { id } = useParams();
             <p>{review.content}</p>
           </div>
         ))
-          )}
+      )}
     </>
   );
 };

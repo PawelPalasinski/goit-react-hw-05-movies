@@ -1,15 +1,10 @@
-import { NavLink  } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
-   
   return (
     <nav>
-      <NavLink to="/">
-        Home
-      </NavLink>
-      <NavLink to="/movies">
-        Movies
-      </NavLink>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/movies">Movies</NavLink>
     </nav>
   );
 };
