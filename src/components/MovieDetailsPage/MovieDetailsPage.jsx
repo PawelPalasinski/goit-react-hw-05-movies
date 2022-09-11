@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { Routes, Link, Route, Outlet } from 'react-router-dom';
+
 import { getById, getReviews, getCasts } from '../services/api';
-import Reviews from '../Reviews/Reviews';
-import Cast from '../Cast/Cast';
+// import Reviews from '../Reviews/Reviews';
+// import Cast from '../Cast/Cast';
 
 const MovieDetailsPage = () => {
   const [moviesId, setIdInfo] = useState(null);
@@ -34,7 +37,10 @@ const MovieDetailsPage = () => {
           <h3>Overview:</h3>
           <p>{moviesId.overview}</p>
           <h3>Genres</h3>
-          <p>{moviesId.genres.map(genre => genre.name + ' ')}</p>
+                  <p>{moviesId.genres.map(genre => genre.name + ' ')}</p>
+
+      <Outlet />      
+
         </>
       )}
     </>

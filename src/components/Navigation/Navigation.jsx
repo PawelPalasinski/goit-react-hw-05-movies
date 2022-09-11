@@ -1,6 +1,7 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink  } from 'react-router-dom';
 
 const Navigation = () => {
+   
   return (
     <nav>
       <NavLink to="/">
