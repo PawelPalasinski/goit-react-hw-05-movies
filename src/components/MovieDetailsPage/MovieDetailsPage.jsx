@@ -1,18 +1,24 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Link, Outlet } from 'react-router-dom';
+import { useParams, Link, Outlet, useNavigate } from 'react-router-dom';
 import { getById } from '../services/api';
 
 const MovieDetailsPage = () => {
   const [moviesId, setIdInfo] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    getById(id).then(setIdInfo);
+    getById(id)
+      .then(setIdInfo)
+      .catch(function (error) {
+        console.log('Error: ' + error);
+      });
   }, [id]);
 
   return (
     <>
+      <button onClick={() => navigate('/')}>Go back</button>
+
       <h2>Movie Details Page</h2>
 
       {moviesId && (

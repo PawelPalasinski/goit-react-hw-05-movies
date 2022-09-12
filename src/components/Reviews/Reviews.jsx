@@ -8,7 +8,11 @@ const Reviews = () => {
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
-    getReviews(id).then(setReviews);
+    getReviews(id)
+      .then(setReviews)
+      .catch(function (error) {
+        console.log('Error: ' + error);
+      });
   }, [id]);
 
   return (

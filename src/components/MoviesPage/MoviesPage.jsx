@@ -4,26 +4,30 @@ import { getByQuery } from '../services/api';
 import { useLocation, Link } from 'react-router-dom';
 
 const MoviesPage = () => {
-  const [film, setFilm] = useState(null);
-  const [films, setFilms] = useState(null);
+  const [movie, setMovie] = useState(null);
+  const [movies, setMovies] = useState(null);
 
   const location = useLocation();
   const queryUrl = new URLSearchParams(location.search).get('name');
 
   useEffect(() => {
-    if (!film) return;
-    getByQuery(film).then(setFilms);
-  }, [film]);
+    if (!movie) return;
+    getByQuery(movie)
+      .then(setMovies)
+      .catch(function (error) {
+        console.log('Error: ' + error);
+      });
+  }, [movie]);
 
   useEffect(() => {
     if (!queryUrl) return;
-    setFilm(queryUrl);
+    setMovie(queryUrl);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSubmit = e => {
     e.preventDefault();
     const name = e.target.elements.name.value;
-    setFilm(name);
+    setMovie(name);
     e.target.elements.name.value = '';
   };
 
@@ -33,15 +37,16 @@ const MoviesPage = () => {
         <input type="text" name="name" />
         <button>search</button>
       </form>
-      {films && films.map(film => (
-          <li key={film.id}>
-            <Link
-              to={{
-                pathname: `/movies/${film.id}`,
-                state: { params: location },
-              }}
-            >
-              {film.title}
+      {movies &&
+        movies.map(movie => (
+          <li key={movie.id}>
+            <Link to={`/movies/${movie.id}`}>
+              <p>{movie.title}</p>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+                width="50"
+              />
             </Link>
           </li>
         ))}

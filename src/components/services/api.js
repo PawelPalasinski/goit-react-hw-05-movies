@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { BASE_URL, API_KEY } from './../utils/utils';
 
-// Trending movies -> HOME
+// Trending movies -> HomePage
 const getMovies = async () => {
   const res = await axios.get(`${BASE_URL}trending/movie/day?${API_KEY}`);
 
@@ -13,13 +13,13 @@ const getMovies = async () => {
   return trendingMovies;
 };
 
-// Search by id
+// Search by id -> MovieDetailsPage
 const getById = async id => {
-  const resById = await axios.get(`${BASE_URL}movie/${id}?${API_KEY}`);
-  return resById.data;
+  let respById = await axios.get(`${BASE_URL}movie/${id}?${API_KEY}`);
+  return respById.data;
 };
 
-//Movie REVIEW by id
+//Movie REVIEW by id -> Review
 const getReviews = async id => {
   const resReviews = await axios.get(
     `${BASE_URL}movie/${id}/reviews?${API_KEY}`
@@ -30,13 +30,13 @@ const getReviews = async id => {
   return reviews;
 };
 
-// CAST review by id
+// CAST review by id -> Cast
 const getCasts = async id => {
   const resCasts = await axios.get(`${BASE_URL}movie/${id}/credits?${API_KEY}`);
   return resCasts.data;
 };
 
-// Movie by name/query
+// Movie by name/query -> MoviesPage
 const getByQuery = async query => {
   const resByQuery = await axios.get(
     `${BASE_URL}search/movie?${API_KEY}&language=en-US&page=1&include_adult=false&query=${query}`
