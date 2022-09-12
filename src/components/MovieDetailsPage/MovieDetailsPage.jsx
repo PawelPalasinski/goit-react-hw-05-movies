@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, Outlet, useNavigate } from 'react-router-dom';
-import { getById } from '../services/api';
+import { getById } from '../../services/api';
 
 const MovieDetailsPage = () => {
   const [moviesId, setIdInfo] = useState(null);

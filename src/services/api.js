@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_URL, API_KEY } from './../utils/utils';
+import { BASE_URL, API_KEY } from '../utils/utils';
 
 // Trending movies -> HomePage
 const getMovies = async () => {

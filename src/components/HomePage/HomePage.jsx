@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getMovies } from '../services/api';
+import { getMovies } from '../../services/api';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {

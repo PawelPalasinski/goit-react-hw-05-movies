@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { getByQuery } from '../services/api';
+import { getByQuery } from '../../services/api';
 import { useLocation, Link } from 'react-router-dom';
 
 const MoviesPage = () => {
