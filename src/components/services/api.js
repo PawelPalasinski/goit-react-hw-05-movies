@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { BASE_URL, API_KEY } from './../utils/utils';
 
-// Trending movies
+// Trending movies -> HOME
 const getMovies = async () => {
   const res = await axios.get(`${BASE_URL}trending/movie/day?${API_KEY}`);
 
@@ -19,7 +19,7 @@ const getById = async id => {
   return resById.data;
 };
 
-//Movie review by id
+//Movie REVIEW by id
 const getReviews = async id => {
   const resReviews = await axios.get(
     `${BASE_URL}movie/${id}/reviews?${API_KEY}`
@@ -30,13 +30,13 @@ const getReviews = async id => {
   return reviews;
 };
 
-//Cast review by id
+// CAST review by id
 const getCasts = async id => {
   const resCasts = await axios.get(`${BASE_URL}movie/${id}/credits?${API_KEY}`);
   return resCasts.data;
 };
 
-//Movie review by name/query
+// Movie by name/query
 const getByQuery = async query => {
   const resByQuery = await axios.get(
     `${BASE_URL}search/movie?${API_KEY}&language=en-US&page=1&include_adult=false&query=${query}`
