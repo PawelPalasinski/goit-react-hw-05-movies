@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
+import {
+  useParams,
+  Link,
+  Outlet,
+  useNavigate,
+  useLocation,
+} from 'react-router-dom';
 import { getById } from '../../services/api';
 
 const MovieDetailsPage = () => {
   const [moviesId, setIdInfo] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
-  
+
   const location = useLocation();
-  console.log(location);
-  console.log(id);
+  const backLinkHref = location.state?.from ?? '/movies';
 
   useEffect(() => {
     getById(id)
@@ -23,7 +28,7 @@ const MovieDetailsPage = () => {
     <>
       <button onClick={() => navigate('/')}>HOME</button>
       <button>
-        <Link to={location.state.from}>Back to products</Link>
+        <Link to={backLinkHref}>Back to movie list</Link>
       </button>
 
       <h2>Movie Details Page</h2>
@@ -47,8 +52,12 @@ const MovieDetailsPage = () => {
           <h3>Genres</h3>
           <p>{moviesId.genres.map(genre => genre.name + ' ')}</p>
 
-          <Link to={`/movies/${id}/reviews`} state={location.state}>Reviews</Link>
-          <Link to={`/movies/${id}/cast`} state={location.state}>Cast</Link>
+          <Link to={`/movies/${id}/reviews`} state={location.state}>
+            Reviews
+          </Link>
+          <Link to={`/movies/${id}/cast`} state={location.state}>
+            Cast
+          </Link>
 
           <Outlet />
         </>
