@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { getMovies } from '../../../services/api';
-import React from 'react'
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const MoviesList = () => {
-const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState(null);
+  const location = useLocation();
 
-    const location = useLocation();
-    
   useEffect(() => {
     getMovies()
       .then(setMovies)
@@ -16,9 +15,9 @@ const [movies, setMovies] = useState(null);
       });
   }, []);
 
-    return (
-  <>
-          {movies &&
+  return (
+    <>
+      {movies &&
         movies.map(movie => (
           <li key={movie.id}>
             <Link to={`movies/${movie.id}`} state={{ from: location }}>
@@ -31,8 +30,8 @@ const [movies, setMovies] = useState(null);
             </Link>
           </li>
         ))}
-            </>
-  )
-}
+    </>
+  );
+};
 
 export default MoviesList;

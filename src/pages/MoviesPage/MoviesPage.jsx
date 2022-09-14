@@ -1,14 +1,16 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { Suspense } from 'react';
+import Spinner from '.././Loader/Loader';
 import { getByQuery } from '../../services/api';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
+const MoviesPageList = React.lazy(() => import('./Components/MoviesPageList'));
 
 const MoviesPage = () => {
+  // eslint-disable-next-line
   const [movie, setMovie] = useState(null);
   const [movies, setMovies] = useState(null);
-
   const [searchParams, setSearchParams] = useSearchParams();
-
   const query = searchParams.get('name') ?? '';
 
   useEffect(() => {
@@ -32,24 +34,13 @@ const MoviesPage = () => {
           type="text"
           value={query}
           onChange={e => setSearchParams({ name: e.target.value })}
+          placeholder="Search movies"
+          autoComplete="off"
         />
       </form>
-      {movies &&
-        movies.map(movie => (
-          <li key={movie.id}>
-            <Link
-              to={`/movies/${movie.id}`}
-              state={{ from: `/movies?name=${query}` }}
-            >
-              <p>{movie.title}</p>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                width="50"
-              />
-            </Link>
-          </li>
-        ))}
+      <Suspense fallback={<Spinner />}>
+        <MoviesPageList query={query} movies={movies} />
+      </Suspense>
     </>
   );
 };

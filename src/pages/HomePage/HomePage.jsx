@@ -1,14 +1,12 @@
-import React, {
-  Suspense,
-} from 'react';
-
-const MoviesList = React.lazy(() => import('./Components/MoviesList'));
+import React, { Suspense } from 'react';
+import Spinner from '.././Loader/Loader'
+const MoviesList = React.lazy(() => import('./Components/HomePageList'));
 
 const HomePage = () => {
   return (
     <ul>
       Trending today
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Spinner />}>
         <MoviesList />
       </Suspense>
     </ul>
