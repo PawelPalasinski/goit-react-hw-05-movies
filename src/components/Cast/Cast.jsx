@@ -5,7 +5,6 @@ import noImg from '../../images/no-image-available.png';
 
 const Cast = () => {
   const { id } = useParams();
-
   const [casts, setCasts] = useState(null);
 
   useEffect(() => {

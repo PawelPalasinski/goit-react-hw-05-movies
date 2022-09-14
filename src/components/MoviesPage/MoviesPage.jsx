@@ -1,14 +1,20 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { getByQuery } from '../../services/api';
-import { useLocation, Link } from 'react-router-dom';
+import {
+  useLocation, Link,
+  useSearchParams
+} from 'react-router-dom';
 
 const MoviesPage = () => {
   const [movie, setMovie] = useState(null);
   const [movies, setMovies] = useState(null);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("name");
+
   const location = useLocation();
-  const queryUrl = new URLSearchParams(location.search).get('name');
+  console.log(location.search);
 
   useEffect(() => {
     if (!movie) return;
@@ -19,28 +25,26 @@ const MoviesPage = () => {
       });
   }, [movie]);
 
-  useEffect(() => {
-    if (!queryUrl) return;
-    setMovie(queryUrl);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
   const handleSubmit = e => {
     e.preventDefault();
-    const name = e.target.elements.name.value;
-    setMovie(name);
-    e.target.elements.name.value = '';
+    const form = e.currentTarget;
+    setMovie(query);
+    form.reset();
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="name" />
+        <input type="text" name={query}
+        onChange={e => setSearchParams({ name: e.target.value })}/>
         <button>search</button>
       </form>
       {movies &&
         movies.map(movie => (
           <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>
+            <Link to={`/movies/${movie.id}`}
+              state={{ from: location}}
+            >
               <p>{movie.title}</p>
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

@@ -4,7 +4,6 @@ import { getReviews } from '../../services/api';
 
 const Reviews = () => {
   const { id } = useParams();
-
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
