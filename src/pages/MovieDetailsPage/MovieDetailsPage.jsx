@@ -26,7 +26,6 @@ const MovieDetailsPage = () => {
 
   return (
     <>
-      <button onClick={() => navigate('/')}>HOME</button>
       <button>
         <Link to={backLinkHref}>Back to movie list</Link>
       </button>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getMovies } from '../../services/api';
+import { getMovies } from '../../../services/api';
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 
