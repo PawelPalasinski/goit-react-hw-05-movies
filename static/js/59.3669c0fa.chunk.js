@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[59],{8059:function(t,e,r){r.r(e);r(2791);var i=r(501),a=r(184);e.default=function(t){var e=t.movies,r=t.location;return(0,a.jsx)(a.Fragment,{children:e&&e.map((function(t){return(0,a.jsx)("li",{children:(0,a.jsxs)(i.rU,{to:"movies/".concat(t.id),state:{from:r},children:[(0,a.jsx)("p",{children:t.title}),(0,a.jsx)("img",{src:"https://image.tmdb.org/t/p/w500".concat(t.poster_path),alt:t.title,width:"50"})]})},t.id)}))})}}}]);
+//# sourceMappingURL=59.3669c0fa.chunk.js.map
