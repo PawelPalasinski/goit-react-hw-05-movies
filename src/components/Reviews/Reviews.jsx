@@ -16,8 +16,6 @@ const Reviews = () => {
 
   return (
     <>
-      <h3>REVIEWS!</h3>
-
       {id.length === 0 ? (
         <p>No reviews available</p>
       ) : (
