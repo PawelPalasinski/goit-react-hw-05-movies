@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const MoviesPageList = ({ query, movies }) => {
@@ -22,6 +23,11 @@ const MoviesPageList = ({ query, movies }) => {
         ))}
     </>
   );
+};
+
+MoviesPageList.propTypes = {
+  query: PropTypes.string,
+  movies: PropTypes.array,
 };
 
 export default MoviesPageList;

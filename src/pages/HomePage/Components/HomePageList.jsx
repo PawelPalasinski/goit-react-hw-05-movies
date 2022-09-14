@@ -1,20 +1,7 @@
-import { useState, useEffect } from 'react';
-import { getMovies } from '../../../services/api';
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const MoviesList = () => {
-  const [movies, setMovies] = useState(null);
-  const location = useLocation();
-
-  useEffect(() => {
-    getMovies()
-      .then(setMovies)
-      .catch(function (error) {
-        console.log('Error: ' + error);
-      });
-  }, []);
-
+const MoviesList = ({ movies, location }) => {
   return (
     <>
       {movies &&
