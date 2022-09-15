@@ -17,10 +17,12 @@ const MovieDetailsPage = () => {
         <Link className={s.btnLink} to={backLink}>Back to movie list</Link>
       </button>
 
-      <h2 className={s.title}>Movie Details Page</h2>
+      <h3 className={s.title}>Movie Details Page</h3>
+      <div className={s.detailsContainer}>
       <Suspense fallback={<Spinner />}>
         <MovieSearchList />
-      </Suspense>
+        </Suspense>
+        </div>
     </>
   );
 };

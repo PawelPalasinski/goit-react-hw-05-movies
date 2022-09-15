@@ -1,22 +1,23 @@
 .backButton {
-  margin-left: 3%;
+  margin-left: 5%;
   margin-top: 10px;
   width: 200px;
-  height: 50px;
+  height: 30px;
   border-style: none;
   border: 1sp solid #808080;
   border-radius: 5px;
   background-color: #daa520;
-  &:hover {
-    width: 200px;
-    height: 50px;
-    border: 1sp solid #daa520;
-    background-color: #808080;
-    border-radius: 20px;
-  }
   & .btnLink {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 700;
   }
+}
+
+.detailsContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
