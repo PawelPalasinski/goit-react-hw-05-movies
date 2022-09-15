@@ -1,0 +1,15 @@
+.navLinks {
+background-color: rgba(0, 0, 0, 0.9);
+display: flex;
+align-items: center;
+justify-content: flex-start;
+height: 70px;
+   & .link {
+    margin-left: 3%;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #808080cc;
+  font-size: 24px;
+}
+}
