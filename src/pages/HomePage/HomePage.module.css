@@ -1,0 +1,28 @@
+body {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+h3 {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 7%;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=HomePage.module.css.map */

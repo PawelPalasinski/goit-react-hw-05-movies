@@ -1,0 +1,26 @@
+.listItem {
+  max-width: 250px;
+  position: relative;
+  margin: 10px;
+  padding: 0;
+  & .listItemLink {
+    text-decoration: none;
+    & .listItemTitle {
+      position: absolute;
+      width: 250px;
+      height: 40px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      top: -15px;
+      color: whitesmoke;
+      font-weight: 600;
+      padding-top: 15px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    & .listItemImage {
+      width: 250px;
+      border-radius: 15px;
+    }
+  }
+}
