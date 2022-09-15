@@ -20,7 +20,7 @@ const HomePage = () => {
 
   return (
     <>
-      <h3>Trending today</h3>
+      <h3>🎞 Trending today</h3>
       <ul className={s.list}>
         <Suspense fallback={<Spinner />}>
           <MoviesList movies={movies} location={location} />
