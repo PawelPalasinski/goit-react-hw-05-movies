@@ -24,12 +24,11 @@ const Cast = () => {
           casts.cast.map(cast => (
             <li key={cast.id} className={s.castItem}>
               {cast.profile_path === null ? (
-                <img src={noImg} alt={cast.name} width="100" />
+                <img src={noImg} alt={cast.name} width="150" />
               ) : (
                 <img className={s.image }
                   src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
                   alt={cast.name}
-                  width="100"
                 />
               )}
               <p className={s.name }>{cast.name}</p>

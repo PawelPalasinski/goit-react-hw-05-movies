@@ -1,0 +1,22 @@
+.form {
+  & .inputField {
+    margin-left: 5%;
+    margin-top: 10px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #808080;
+    &::placeholder {
+      font-weight: 500;
+    }
+    &, textarea {
+              padding-left: 10px;
+        color: rgba(0, 0, 0, 0.9);
+    }
+    &:focus {
+        outline: none;
+        border: 1px solid #daa520;
+    }
+  }
+}

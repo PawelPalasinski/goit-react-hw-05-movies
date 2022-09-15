@@ -3,16 +3,21 @@
   list-style: none;
   flex-wrap: wrap;
   gap: 10px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
   & .castItem {
-    width: 100px;
+    width: 150px;
     border: 1px solid #daa520;
+    border-radius: 2px;
     padding: 2px;
-    & .image {
-    }
     & .name {
       font-weight: 700;
       font-size: 16px;
       color: rgba(0, 0, 0, 0.9);
+    }
+    & .image {
+      max-width: 150px;
     }
     & .character {
       font-size: 14px;

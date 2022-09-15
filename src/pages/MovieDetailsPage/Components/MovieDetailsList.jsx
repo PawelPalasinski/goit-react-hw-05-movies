@@ -37,7 +37,7 @@ const MovieSearchList = () => {
             <h3>Overview:</h3>
             <p>{moviesId.overview}</p>
             <h3>Genres:</h3>
-            <ul className={s.genres}>{moviesId.genres.map(genre => <li>{genre.name}</li>)}</ul>
+            <ul className={s.genres}>{moviesId.genres.map(genre => <li ket={genre.genre_ids}>{genre.name}</li>)}</ul>
 
             <Link to={`/movies/${id}/reviews`} className={s.link} state={location.state}>
               Reviews

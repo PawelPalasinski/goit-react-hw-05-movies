@@ -3,7 +3,7 @@ import Spinner from '.././Loader/Loader';
 import { getByQuery } from '../../services/api';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
+import s from './MoviesPage.module.css';
 const MoviesPageList = React.lazy(() => import('./Components/MoviesPageList'));
 
 const MoviesPage = () => {
@@ -29,14 +29,16 @@ const MoviesPage = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
+      <form className={s.form}  onSubmit={handleSubmit}>
+      <input className={s.inputField}
           type="text"
           value={query}
           onChange={e => setSearchParams({ name: e.target.value })}
           placeholder="Search movies"
           autoComplete="off"
-        />
+ />
+
+
       </form>
       <Suspense fallback={<Spinner />}>
         <MoviesPageList query={query} movies={movies} />
