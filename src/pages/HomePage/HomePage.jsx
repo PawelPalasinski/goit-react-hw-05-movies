@@ -16,6 +16,7 @@ const HomePage = () => {
         console.log('Error: ' + error);
       });
   }, []);
+
   return (
     <ul>
       Trending today
