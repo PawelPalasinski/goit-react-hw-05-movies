@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EACd,KAAK,EAAE,oBAAoB;CAC9B",
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACf,MAAM,EAAE,kBAAkB;EAC1B,aAAa,EAAE,GAAG;EAChB,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,MAAM;CAClB",
     "sources": [
         "Reviews.module.scss"
     ],

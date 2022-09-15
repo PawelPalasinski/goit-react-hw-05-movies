@@ -3,7 +3,7 @@ import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getById } from '../../../services/api';
 import s from './MovieDetailsList.module.css';
 
-const MovieSearchList = () => {
+const MovieDetailsList = () => {
   const location = useLocation();
   const [moviesId, setIdInfo] = useState(null);
   const { id } = useParams();
@@ -37,12 +37,24 @@ const MovieSearchList = () => {
             <h3>Overview:</h3>
             <p>{moviesId.overview}</p>
             <h3>Genres:</h3>
-            <ul className={s.genres}>{moviesId.genres.map(genre => <li ket={genre.genre_ids}>{genre.name}</li>)}</ul>
+            <ul className={s.genres}>
+              {moviesId.genres.map(genre => (
+                <li key={genre.genre_ids}>{genre.name}</li>
+              ))}
+            </ul>
 
-            <Link to={`/movies/${id}/reviews`} className={s.link} state={location.state}>
+            <Link
+              to={`/movies/${id}/reviews`}
+              className={s.link}
+              state={location.state}
+            >
               Reviews
             </Link>
-            <Link to={`/movies/${id}/cast`} className={s.link} state={location.state}>
+            <Link
+              to={`/movies/${id}/cast`}
+              className={s.link}
+              state={location.state}
+            >
               Cast
             </Link>
 
@@ -54,4 +66,4 @@ const MovieSearchList = () => {
   );
 };
 
-export default MovieSearchList;
+export default MovieDetailsList;

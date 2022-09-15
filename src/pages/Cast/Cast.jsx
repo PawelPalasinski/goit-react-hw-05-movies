@@ -18,7 +18,7 @@ const Cast = () => {
 
   return (
     <>
-      <h3>Cast:</h3>
+      <h3>Cast: </h3>
       <ul className={s.castList}>
         {casts &&
           casts.cast.map(cast => (
@@ -26,13 +26,14 @@ const Cast = () => {
               {cast.profile_path === null ? (
                 <img src={noImg} alt={cast.name} width="150" />
               ) : (
-                <img className={s.image }
+                <img
+                  className={s.image}
                   src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
                   alt={cast.name}
                 />
               )}
-              <p className={s.name }>{cast.name}</p>
-              <p className={s.character }>Character: {cast.character}</p>
+              <p className={s.name}>{cast.name}</p>
+              <p className={s.character}>Character: {cast.character}</p>
             </li>
           ))}
       </ul>

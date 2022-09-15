@@ -10,13 +10,24 @@
     &::placeholder {
       font-weight: 500;
     }
-    &, textarea {
-              padding-left: 10px;
-        color: rgba(0, 0, 0, 0.9);
+    &,
+    textarea {
+      padding-left: 10px;
+      color: rgba(0, 0, 0, 0.9);
     }
     &:focus {
-        outline: none;
-        border: 1px solid #daa520;
+      outline: none;
+      border: 1px solid #daa520;
     }
   }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 3%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }

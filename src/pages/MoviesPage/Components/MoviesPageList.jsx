@@ -1,22 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import s from '../../HomePage/Components/HomePageList.module.css';
 
 const MoviesPageList = ({ query, movies }) => {
   return (
     <>
       {movies &&
         movies.map(movie => (
-          <li key={movie.id}>
+          <li key={movie.id} className={s.listItem}>
             <Link
               to={`/movies/${movie.id}`}
+              className={s.listItemLink}
               state={{ from: `/movies?name=${query}` }}
             >
-              <p>{movie.title}</p>
+              <p className={s.listItemTitle}>{movie.title}</p>
               <img
+                className={s.listItemImage}
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
-                width="50"
               />
             </Link>
           </li>

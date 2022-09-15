@@ -29,20 +29,21 @@ const MoviesPage = () => {
 
   return (
     <>
-      <form className={s.form}  onSubmit={handleSubmit}>
-      <input className={s.inputField}
+      <form className={s.form} onSubmit={handleSubmit}>
+        <input
+          className={s.inputField}
           type="text"
           value={query}
           onChange={e => setSearchParams({ name: e.target.value })}
           placeholder="Search movies"
           autoComplete="off"
- />
-
-
+        />
       </form>
-      <Suspense fallback={<Spinner />}>
-        <MoviesPageList query={query} movies={movies} />
-      </Suspense>
+      <ul className={s.list}>
+        <Suspense fallback={<Spinner />}>
+          <MoviesPageList query={query} movies={movies} />
+        </Suspense>
+      </ul>
     </>
   );
 };

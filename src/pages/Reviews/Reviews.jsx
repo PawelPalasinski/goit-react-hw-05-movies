@@ -21,9 +21,9 @@ const Reviews = () => {
         reviews.map(review => (
           <div key={review.id} className={s.reviewContainer}>
             <h3 className={s.reviewer}>🗣 review.author</h3>
-                <p className={s.review}>{review.content}</p>
-          </div>)
-      )}
+            <p className={s.review}>{review.content}</p>
+          </div>
+        ))}
     </>
   );
 };

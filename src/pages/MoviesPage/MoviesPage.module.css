@@ -24,7 +24,8 @@
   font-weight: 500;
 }
 
-.form .inputField, .form .inputField textarea {
+.form .inputField,
+.form .inputField textarea {
   padding-left: 10px;
   color: rgba(0, 0, 0, 0.9);
 }
@@ -32,5 +33,22 @@
 .form .inputField:focus {
   outline: none;
   border: 1px solid #daa520;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=MoviesPage.module.css.map */
