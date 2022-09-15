@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCasts } from '../../services/api';
+import s from './Cast.module.css';
 import noImg from '../../images/no-image-available.png';
 
 const Cast = () => {
@@ -17,22 +18,22 @@ const Cast = () => {
 
   return (
     <>
-      <h3>Cast</h3>
-      <ul>
+      <h3>Cast:</h3>
+      <ul className={s.castList}>
         {casts &&
           casts.cast.map(cast => (
-            <li key={cast.id}>
+            <li key={cast.id} className={s.castItem}>
               {cast.profile_path === null ? (
                 <img src={noImg} alt={cast.name} width="100" />
               ) : (
-                <img
+                <img className={s.image }
                   src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
                   alt={cast.name}
                   width="100"
                 />
               )}
-              <p>{cast.name}</p>
-              <p>Character: {cast.character}</p>
+              <p className={s.name }>{cast.name}</p>
+              <p className={s.character }>Character: {cast.character}</p>
             </li>
           ))}
       </ul>

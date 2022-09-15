@@ -1,0 +1,27 @@
+.castList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+
+.castList .castItem {
+  width: 100px;
+  border: 1px solid #daa520;
+  padding: 2px;
+}
+
+.castList .castItem .name {
+  font-weight: 700;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.castList .castItem .character {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+/*# sourceMappingURL=Cast.module.css.map */
