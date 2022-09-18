@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './HomePageList.module.css';
 
@@ -24,6 +25,10 @@ const MoviesList = ({ movies, location }) => {
         ))}
     </>
   );
+};
+
+MoviesList.propTypes = {
+  movies: PropTypes.array,
 };
 
 export default MoviesList;
