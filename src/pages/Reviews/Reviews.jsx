@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from '../../services/api';
-import s from './Reviews.module.css';
+import styles from './Reviews.module.css';
 
 const Reviews = () => {
   const { id } = useParams();
@@ -19,9 +19,9 @@ const Reviews = () => {
     <>
       {reviews &&
         reviews.map(review => (
-          <div key={review.id} className={s.reviewContainer}>
-            <h3 className={s.reviewer}>🗣 review.author</h3>
-            <p className={s.review}>{review.content}</p>
+          <div key={review.id} className={styles.reviewContainer}>
+            <h3 className={styles.reviewer}>🗣 review.author</h3>
+            <p className={styles.review}>{review.content}</p>
           </div>
         ))}
     </>

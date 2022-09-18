@@ -1,8 +1,8 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { getMovies } from '../../services/api';
 import { useLocation } from 'react-router-dom';
-import Spinner from '.././Loader/Loader';
-import s from './HomePage.module.css';
+import Spinner from '../../ui/Loader/Loader';
+import styles from './HomePage.module.css';
 
 const MoviesList = React.lazy(() => import('./Components/HomePageList'));
 
@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <>
       <h3>🎞 Trending today</h3>
-      <ul className={s.list}>
+      <ul className={styles.list}>
         <Suspense fallback={<Spinner />}>
           <MoviesList movies={movies} location={location} />
         </Suspense>

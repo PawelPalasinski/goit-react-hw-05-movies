@@ -1,8 +1,8 @@
-import s from './NotFound.module.css';
+import styles from './NotFound.module.css';
 
 const NotFound = () => {
   return (
-    <main className={s.main}>
+    <main className={styles.main}>
       <h1>
         4
         <span>

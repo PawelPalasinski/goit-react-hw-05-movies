@@ -1,21 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import s from './HomePageList.module.css';
+import styles from './HomePageList.module.css';
 
 const MoviesList = ({ movies, location }) => {
   return (
     <>
       {movies &&
         movies.map(movie => (
-          <li key={movie.id} className={s.listItem}>
+          <li key={movie.id} className={styles.listItem}>
             <Link
-              className={s.listItemLink}
+              className={styles.listItemLink}
               to={`movies/${movie.id}`}
               state={{ from: location }}
             >
-              <p className={s.listItemTitle}>{movie.title}</p>
+              <p className={styles.listItemTitle}>{movie.title}</p>
               <img
-                className={s.listItemImage}
+                className={styles.listItemImage}
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
               />

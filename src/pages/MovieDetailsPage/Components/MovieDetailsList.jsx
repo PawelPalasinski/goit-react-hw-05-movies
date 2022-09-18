@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getById } from '../../../services/api';
-import s from './MovieDetailsList.module.css';
+import styles from './MovieDetailsList.module.css';
 
 const MovieDetailsList = () => {
   const location = useLocation();
@@ -20,7 +20,7 @@ const MovieDetailsList = () => {
     <>
       {moviesId && (
         <>
-          <div className={s.left}>
+          <div className={styles.left}>
             <h2>
               {moviesId.title} ({moviesId.release_date.slice(0, 4)})
             </h2>
@@ -33,11 +33,11 @@ const MovieDetailsList = () => {
             />
           </div>
 
-          <div className={s.right}>
+          <div className={styles.right}>
             <h3>Overview:</h3>
             <p>{moviesId.overview}</p>
             <h3>Genres:</h3>
-            <ul className={s.genres}>
+            <ul className={styles.genres}>
               {moviesId.genres.map(genre => (
                 <li key={genre.genre_ids}>{genre.name}</li>
               ))}
@@ -45,14 +45,14 @@ const MovieDetailsList = () => {
 
             <Link
               to={`/movies/${id}/reviews`}
-              className={s.link}
+              className={styles.link}
               state={location.state}
             >
               Reviews
             </Link>
             <Link
               to={`/movies/${id}/cast`}
-              className={s.link}
+              className={styles.link}
               state={location.state}
             >
               Cast

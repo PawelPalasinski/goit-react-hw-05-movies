@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import {DebounceInput} from 'react-debounce-input';
-import Spinner from '.././Loader/Loader';
+import Spinner from '../../ui/Loader/Loader';
 import { getByQuery } from '../../services/api';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import s from './MoviesPage.module.css';
+import styles from './MoviesPage.module.css';
 const MoviesPageList = React.lazy(() => import('./Components/MoviesPageList'));
 
 const MoviesPage = () => {
@@ -30,18 +30,19 @@ const MoviesPage = () => {
 
   return (
     <>
-      <form className={s.form} onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <DebounceInput
-          className={s.inputField}
+          className={styles.inputField}
           type="text"
           value={query}
           debounceTimeout={500}
           onChange={e => setSearchParams({ name: e.target.value })}
           placeholder="Search movies"
           autoComplete="off"
+          autoFocus
         />
       </form>
-      <ul className={s.list}>
+      <ul className={styles.list}>
         <Suspense fallback={<Spinner />}>
           <MoviesPageList query={query} movies={movies} />
         </Suspense>
