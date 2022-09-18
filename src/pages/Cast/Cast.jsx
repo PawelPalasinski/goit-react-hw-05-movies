@@ -11,6 +11,7 @@ const Cast = () => {
   useEffect(() => {
     getCasts(id)
       .then(setCasts)
+      // .then((data) => setCasts(data))
       .catch(function (error) {
         console.log('Error: ' + error);
       });

@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import {DebounceInput} from 'react-debounce-input';
 import Spinner from '.././Loader/Loader';
 import { getByQuery } from '../../services/api';
 import { useState, useEffect } from 'react';
@@ -30,10 +31,11 @@ const MoviesPage = () => {
   return (
     <>
       <form className={s.form} onSubmit={handleSubmit}>
-        <input
+        <DebounceInput
           className={s.inputField}
           type="text"
           value={query}
+          debounceTimeout={500}
           onChange={e => setSearchParams({ name: e.target.value })}
           placeholder="Search movies"
           autoComplete="off"
