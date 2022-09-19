@@ -10,7 +10,7 @@ const ReviewsList = data => {
       {reviews.data && reviews.data.length ? (
         reviews.data.map(review => (
           <div key={review.id} className={styles.reviewContainer}>
-            <h3 className={styles.reviewer}>🗣 review.author</h3>
+            <h3 className={styles.reviewer}>🗣 {review.author}</h3>
             <p className={styles.review}>{review.content}</p>
           </div>
         ))
