@@ -8,6 +8,7 @@
   align-items: center;
   & .castItem {
     width: 150px;
+    height: 310px;
     border: 1px solid #daa520;
     border-radius: 2px;
     padding: 2px;
@@ -17,11 +18,20 @@
       color: rgba(0, 0, 0, 0.9);
     }
     & .image {
-      max-width: 150px;
+      width: 150px;
+      max-height: 200px;
+      object-fit: cover;
     }
     & .character {
       font-size: 14px;
       color: rgba(0, 0, 0, 0.8);
     }
   }
+}
+
+.noInfo {
+  color: red;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
 }

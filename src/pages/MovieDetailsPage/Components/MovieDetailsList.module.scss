@@ -41,11 +41,11 @@
     list-style: none;
     display: flex;
     gap: 10px;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 0;
     & li {
-      width: 100px;
+      min-width: 100px;
       height: 25px;
       border: 1px solid #daa520;
       border-radius: 5px;
@@ -54,9 +54,13 @@
       color: rgba(0, 0, 0, 0.8);
     }
   }
-
+& .links {
+  display: flex;
+  justify-content: center;
+align-items: center;
   & .link {
-    display: inline-block;
+    justify-content: center;
+    flex-direction: row;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 700;
@@ -69,4 +73,5 @@
     text-align: center;
     margin-right: 20px;
   }
+}
 }

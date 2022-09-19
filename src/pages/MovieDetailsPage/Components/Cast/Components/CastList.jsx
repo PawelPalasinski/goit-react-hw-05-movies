@@ -25,7 +25,7 @@ const CastList = data => {
           </li>
         ))
       ) : (
-        <li>Sorry, no cast has been added yet</li>
+          <li key="noInfo" className={styles.noInfo}>Sorry, no cast has been added yet</li>
       )}
     </ul>
   );

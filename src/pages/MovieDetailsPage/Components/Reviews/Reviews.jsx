@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from '../../../../services/api';
-import styles from './Reviews.module.css';
+import Spinner from '../../../../ui/Loader/Loader';
+import ReviewsList from './Components/ReviewsList';
 
 const Reviews = () => {
   const { id } = useParams();
@@ -11,35 +12,23 @@ const Reviews = () => {
   const reviewContainer = useRef();
 
   useEffect(() => {
+    setLoading(true);
     getReviews(id)
       .then(data => setReviews(data))
       .catch(function (error) {
         console.log('Error: ' + error);
       })
       .finally(() => {
-          setTimeout(() => {
-            setLoading(false);
-            reviewContainer.current.scrollIntoView({ behavior: 'smooth' });
-          }, 500);
-        });
+        setTimeout(() => {
+          setLoading(false);
+          reviewContainer.current.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      });
   }, [id]);
 
   return (
     <div ref={reviewContainer}>
-      
-      
-      {reviews &&
-        reviews.map(review => (
-          <div key={review.id} className={styles.reviewContainer}>
-            <h3 className={styles.reviewer}>🗣 review.author</h3>
-            <p className={styles.review}>{review.content}</p>
-          </div>
-        ))}
-      
-
-
-
-
+      {isLoading ? <Spinner /> : <ReviewsList data={reviews} />}
     </div>
   );
 };

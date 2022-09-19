@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { getById } from '../../../services/api';
+import noImg from '../../../images/no-poster-available.png';
 import styles from './MovieDetailsList.module.css';
 
 const MovieDetailsList = () => {
@@ -27,10 +28,20 @@ const MovieDetailsList = () => {
             <p>
               {Math.round((moviesId.vote_average + Number.EPSILON) * 100) / 100}
             </p>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${moviesId.poster_path}`}
-              alt={moviesId.title}
-            />
+
+            {moviesId.poster_path === null ? (
+              <img
+                className={styles.listItemImage}
+                src={noImg}
+                alt={moviesId.title}
+              />
+            ) : (
+              <img
+                className={styles.listItemImage}
+                src={`https://image.tmdb.org/t/p/w500${moviesId.poster_path}`}
+                alt={moviesId.title}
+              />
+            )}
           </div>
 
           <div className={styles.right}>
@@ -43,21 +54,36 @@ const MovieDetailsList = () => {
               ))}
             </ul>
 
-            <Link
-              to={`/movies/${id}/reviews`}
-              className={styles.link}
-              state={location.state}
-            >
-              Reviews
-            </Link>
-            <Link
-              to={`/movies/${id}/cast`}
-              className={styles.link}
-              state={location.state}
-            >
-              Cast
-            </Link>
-
+            <div className={styles.links}>
+              <NavLink
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        backgroundColor: '#daa520',
+                      }
+                    : { backgroundColor: '#808080' }
+                }
+                to={`/movies/${id}/reviews`}
+                className={styles.link}
+                state={location.state}
+              >
+                Reviews
+              </NavLink>
+              <NavLink
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        backgroundColor: '#daa520',
+                      }
+                    : { backgroundColor: '#808080' }
+                }
+                to={`/movies/${id}/cast`}
+                className={styles.link}
+                state={location.state}
+              >
+                Cast
+              </NavLink>
+            </div>
             <Outlet />
           </div>
         </>

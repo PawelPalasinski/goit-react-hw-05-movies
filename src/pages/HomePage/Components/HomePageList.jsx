@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './HomePageList.module.css';
+import noImg from '../../../images/no-poster-available.png';
 
 const MoviesList = ({ movies, location }) => {
   return (
@@ -15,11 +16,20 @@ const MoviesList = ({ movies, location }) => {
               state={{ from: location }}
             >
               <p className={styles.listItemTitle}>{movie.title}</p>
-              <img
-                className={styles.listItemImage}
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-              />
+
+              {movie.poster_path === null ? (
+                <img
+                  className={styles.listItemImage}
+                  src={noImg}
+                  alt={movie.title}
+                />
+              ) : (
+                <img
+                  className={styles.listItemImage}
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              )}
             </Link>
           </li>
         ))}
