@@ -15,4 +15,9 @@
   
   ## 🌐 [Website](https://pp-tmdb-movie-app.netlify.app)
   
+<img src="https://i.ibb.co/QdGVc5c/movies1.jpg" alt="home page" border="0">
+  
+<img src="https://i.ibb.co/ftmxpLJ/movies2.jpg" alt="search page" border="0">
+  
+  
 </div>
