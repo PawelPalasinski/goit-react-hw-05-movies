@@ -13,11 +13,12 @@
   
   ## themoviedb.org API
   
-  ## 🌐 [Website](https://pp-tmdb-movie-app.netlify.app)
-  
-<img src="https://i.ibb.co/QdGVc5c/movies1.jpg" alt="home page" border="0">
-  
-<img src="https://i.ibb.co/ftmxpLJ/movies2.jpg" alt="search page" border="0">
-  
+  ## [<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/collections/github-pages-examples/github-pages-examples.png" width="80px" alt="home page" border="0">](https://pp-tmdb-movie-app.netlify.app)
+
+<img src="https://i.ibb.co/ctBNSMw/movies-1.jpg" alt="home page" border="0">
+
+<img src="https://i.ibb.co/RgGBvNJ/movies-2.jpg" alt="search page" border="0">
+
+<img src="https://i.ibb.co/H2rFxPL/movies-3.jpg" alt="movie pag" border="0">
   
 </div>
