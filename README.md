@@ -1,6 +1,6 @@
-# Movie Search Page - React App
-
 <div align="center">
+
+# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FFFFFF&center=true&width=435&lines=Movie+Search+Page+-+React+App)](https://git.io/typing-svg)
 
 ### Technologies
 
