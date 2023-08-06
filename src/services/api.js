@@ -2,8 +2,10 @@ import axios from 'axios';
 import { BASE_URL, API_KEY } from '../constantans/utils';
 
 // Trending movies -> HomePage
-const getMovies = async () => {
-  const res = await axios.get(`${BASE_URL}trending/movie/day?${API_KEY}`);
+const getMovies = async page => {
+  const res = await axios.get(
+    `${BASE_URL}trending/movie/day?${API_KEY}&page=${page}`
+  );
 
   const trendingMovies = res.data.results.map(
     ({ id, title, poster_path, vote_average }) => {
@@ -37,9 +39,9 @@ const getCasts = async id => {
 };
 
 // Movie by name/query -> MoviesPage
-const getByQuery = async query => {
+const getByQuery = async (query, page) => {
   const resByQuery = await axios.get(
-    `${BASE_URL}search/movie?${API_KEY}&language=en-US&page=1&include_adult=false&query=${query}`
+    `${BASE_URL}search/movie?${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${query}`
   );
   return resByQuery.data.results;
 };
