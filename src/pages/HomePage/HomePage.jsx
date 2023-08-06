@@ -35,7 +35,7 @@ const HomePage = () => {
     if (!firstPageFetched) {
       fetchMovies(1);
     }
-  }, [fetchMovies]);
+  }, [fetchMovies, firstPageFetched]);
 
   const handleScroll = useCallback(() => {
     const scrollHeight = document.documentElement.scrollHeight;
