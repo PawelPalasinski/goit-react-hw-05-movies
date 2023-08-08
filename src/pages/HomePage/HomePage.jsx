@@ -30,7 +30,6 @@ const HomePage = () => {
     [firstPageFetched]
   );
 
-  // Fetch the first page on component mount
   useEffect(() => {
     if (!firstPageFetched) {
       fetchMovies(1);
@@ -42,8 +41,10 @@ const HomePage = () => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
 
+    const offset = 100;
+
     if (
-      scrollHeight - scrollTop === clientHeight &&
+      scrollHeight - scrollTop - offset <= clientHeight &&
       !loading &&
       window.location.pathname === '/'
     ) {
