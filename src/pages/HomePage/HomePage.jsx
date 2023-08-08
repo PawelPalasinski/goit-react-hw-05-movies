@@ -62,6 +62,10 @@ const HomePage = () => {
     };
   }, [handleScroll]);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <h3>🎞 Trending today</h3>
@@ -71,6 +75,26 @@ const HomePage = () => {
         </Suspense>
       </ul>
       {loading && <Spinner />}
+
+      <button className={styles.scrollToTopButton} onClick={handleScrollToTop}>
+        <svg
+          fill="#daa520"
+          width="75px"
+          height="75px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path d="M5 15h4v6h6v-6h4l-7-8zM4 3h16v2H4z"></path>
+          </g>
+        </svg>
+      </button>
     </>
   );
 };

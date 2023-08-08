@@ -13,16 +13,19 @@ h3 {
   list-style: none;
   padding: 0;
   margin: 10px 3%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
-/*# sourceMappingURL=HomePage.module.css.map */
+
+.scrollToTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: -5px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}/*# sourceMappingURL=HomePage.module.css.map */
